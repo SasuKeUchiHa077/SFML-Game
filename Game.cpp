@@ -5,7 +5,7 @@
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/Mouse.hpp>
 #include <SFML/Window/WindowStyle.hpp>
-//gu
+
 //Private Functions---------------------------------------
 void Game::InitVariables() {
     //window variable
