@@ -12,7 +12,7 @@
 #include <SFML/Window/VideoMode.hpp>
 #include <SFML/Window/WindowStyle.hpp>
 #include <vector>
-//gu
+
 /*
 - Class which acts as game engine.
 - Wrapper class.
