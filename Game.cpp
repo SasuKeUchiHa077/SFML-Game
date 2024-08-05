@@ -8,7 +8,14 @@
 
 //Private Functions---------------------------------------
 void Game::InitVariables() {
+    //window variable
     this->window = nullptr;
+
+    //Game logic variables
+    this->points = 0;
+    this->enemySpawnTimerMax = 1000.f;
+    this->enemySpawnTimer = this->enemySpawnTimerMax;
+    this->maxEnemies = 5;
 }
 
 void Game::InitWindow() {
@@ -16,6 +23,7 @@ void Game::InitWindow() {
     this->videoMode.height = 600;
     
     this->window = new sf::RenderWindow(videoMode, "Game", sf::Style::Titlebar | sf::Style::Close);
+    this->window->setFramerateLimit(60);
 }
 
 void Game::InitEnemy() {
