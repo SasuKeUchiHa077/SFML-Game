@@ -2,7 +2,7 @@
 
 #define WIDTH 640
 #define HEIGHT 480
-
+//gu
 int main (int argc, char *argv[]) {
 
     Game game;
