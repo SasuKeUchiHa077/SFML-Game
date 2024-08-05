@@ -54,6 +54,7 @@ void Game::UpdateEnemy() {
 void Game::Update() {
     this->PollEvents();
     this->UpdateMousePosition();
+    this->UpdateEnemy();
 }
 
 void Game::RenderEnemy() {
@@ -62,7 +63,7 @@ void Game::RenderEnemy() {
 
 void Game::Render() {
     this->window->clear();
-    this->window->draw(this->enemy);
+    this->RenderEnemy();
     this->window->display();
 }
 
