@@ -7,6 +7,7 @@
 #include <SFML/System.hpp>
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
+#include <SFML/System/Vector2.hpp>
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/VideoMode.hpp>
 #include <SFML/Window/WindowStyle.hpp>
@@ -22,6 +23,9 @@ private:
     sf::RenderWindow *window;
     sf::VideoMode videoMode;
     sf::Event event;
+
+    //Mouse position
+    sf::Vector2i mousePosition;
 
     //Game objects
     sf::RectangleShape enemy;
@@ -39,9 +43,16 @@ public:
     //Accessors
     bool const Running() const;
 
-    //Public Functions
+    //Public Functions------------------]
     void PollEvents();
+
+    //Update Functions
+    void UpdateMousePosition();
+    void UpdateEnemy();
     void Update();
+
+    //Render functions
+    void RenderEnemy();
     void Render();
 };
 

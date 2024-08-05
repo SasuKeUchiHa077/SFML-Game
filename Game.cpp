@@ -3,6 +3,7 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Window/Event.hpp>
+#include <SFML/Window/Mouse.hpp>
 #include <SFML/Window/WindowStyle.hpp>
 
 //Private Functions---------------------------------------
@@ -39,8 +40,24 @@ void Game::PollEvents() {
     }
 }
 
+void Game::UpdateMousePosition() {
+    /* Fuction to Update Mouse Position
+    */
+
+    this->mousePosition = sf::Mouse::getPosition(*this->window);
+}
+
+void Game::UpdateEnemy() {
+    //Update Enemies
+}
+
 void Game::Update() {
     this->PollEvents();
+    this->UpdateMousePosition();
+}
+
+void Game::RenderEnemy() {
+    //Render Enemies
 }
 
 void Game::Render() {
