@@ -11,6 +11,7 @@
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/VideoMode.hpp>
 #include <SFML/Window/WindowStyle.hpp>
+#include <vector>
 
 /*
 - Class which acts as game engine.
@@ -27,7 +28,14 @@ private:
     //Mouse position
     sf::Vector2i mousePosition;
 
+    //Game logic
+    int points;
+    float enemySpawnTimer;
+    float enemySpawnTimerMax ;
+    int maxEnemies;
+
     //Game objects
+    std::vector<sf::RectangleShape> enemies;
     sf::RectangleShape enemy;
 
     //Private Functions
