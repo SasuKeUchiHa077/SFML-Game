@@ -1,4 +1,4 @@
-#include "Header files/Game.h"
+#include "headerFiles/Game.h"
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Vector2.hpp>
@@ -48,6 +48,10 @@ void Game::PollEvents() {
     }
 }
 
+void Game::SpawnEnemies() {
+
+}
+
 void Game::UpdateMousePosition() {
     /* Fuction to Update Mouse Position
     */
@@ -56,7 +60,15 @@ void Game::UpdateMousePosition() {
 }
 
 void Game::UpdateEnemy() {
-    //Update Enemies
+    //Update Enemy timer
+    if (this->enemies.size() < this->maxEnemies) {
+        if (this->enemySpawnTimer >= this->enemySpawnTimerMax) {
+            this->SpawnEnemies();
+            this->enemySpawnTimer = 0.f;
+        } else {
+            this->enemySpawnTimer += 1.f;
+        }
+    }
 }
 
 void Game::Update() {
