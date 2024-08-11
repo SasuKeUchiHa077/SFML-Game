@@ -28,11 +28,7 @@ void Game::InitWindow() {
 }
 
 void Game::InitEnemy() {
-    const float enemySize = 50.f;
-    this->enemy.setSize(sf::Vector2f(enemySize, enemySize));
-    this->enemy.setFillColor(sf::Color::Cyan);
-    this->enemy.setOutlineColor(sf::Color::Red);
-    this->enemy.setOutlineThickness(2.f);
+
 }
 
 //Public Functions---------------------------------------
@@ -55,6 +51,14 @@ void Game::SpawnEnemies() {
         static_cast<float>(rand() % static_cast<int>(this->window->getSize().x - this->enemy.getSize().x)),
         static_cast<float>(rand() % static_cast<int>(this->window->getSize().y - this->enemy.getSize().y))
     );
+
+    const float enemySize = 50.f;
+    this->enemy.setSize(sf::Vector2f(enemySize, enemySize));
+    this->enemy.setFillColor(sf::Color::Cyan);
+    this->enemy.setOutlineColor(sf::Color::Red);
+    this->enemy.setOutlineThickness(2.f);
+
+    this->enemies.push_back(this->enemy);
 }
 
 void Game::UpdateMousePosition() {
