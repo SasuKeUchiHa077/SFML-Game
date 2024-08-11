@@ -5,6 +5,7 @@
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/Mouse.hpp>
 #include <SFML/Window/WindowStyle.hpp>
+#include <cstdlib>
 
 //Private Functions---------------------------------------
 void Game::InitVariables() {
@@ -49,7 +50,11 @@ void Game::PollEvents() {
 }
 
 void Game::SpawnEnemies() {
-
+    //Spawn Enemies
+    this->enemy.setPosition(
+        static_cast<float>(rand() % static_cast<int>(this->window->getSize().x - this->enemy.getSize().x)),
+        static_cast<float>(rand() % static_cast<int>(this->window->getSize().y - this->enemy.getSize().y))
+    );
 }
 
 void Game::UpdateMousePosition() {
