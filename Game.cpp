@@ -62,9 +62,7 @@ void Game::SpawnEnemies() {
 }
 
 void Game::UpdateMousePosition() {
-    /* Fuction to Update Mouse Position
-    */
-
+    /* Fuction to Update Mouse Position*/
     this->mousePosition = sf::Mouse::getPosition(*this->window);
 }
 
@@ -78,6 +76,10 @@ void Game::UpdateEnemy() {
             this->enemySpawnTimer += 1.f;
         }
     }
+
+    for (auto &enemies : this->enemies) {
+        enemies.move(0.f, 2.f);
+    }
 }
 
 void Game::Update() {
@@ -88,6 +90,9 @@ void Game::Update() {
 
 void Game::RenderEnemy() {
     //Render Enemies
+    for (auto &enemies : this->enemies) {
+        this->window->draw(enemies);
+    }
 }
 
 void Game::Render() {
