@@ -12,6 +12,7 @@
 #include <SFML/Window/VideoMode.hpp>
 #include <SFML/Window/WindowStyle.hpp>
 #include <vector>
+#include <ctime>
 
 /*
 - Class which acts as game engine.
@@ -54,7 +55,8 @@ public:
     //Public Functions------------------]
     void PollEvents();
 
-    //Update Functions
+    void SpawnEnemies();
+
     void UpdateMousePosition();
     void UpdateEnemy();
     void Update();
